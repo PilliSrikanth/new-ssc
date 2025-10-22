@@ -29,8 +29,8 @@ exports.createOrder = async (req, res) => {
     const safeEmail = email || user.email || 'test@example.com';
     const safePhone = phone || user.phone || '9999999999';
 
-    const surl = `${process.env.BASE_URL}/api/recharge/verify`;
-    const furl = `${process.env.BASE_URL}/api/recharge/verify`;
+    const surl = `https://new-ssc.onrender.com/api/recharge/verify`;
+    const furl = `https://new-ssc.onrender.com/api/recharge/verify`;
 
     const hashString = `${PAYU_KEY}|${txnid}|${totalAmount}|${productinfo}|${safeFirstname}|${safeEmail}|||||||||||${PAYU_SALT}`;
     const hash = crypto.createHash('sha512').update(hashString).digest('hex');
